@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Linking, StyleSheet, Image } from 'react-native';
-
+import { Ionicons } from '@expo/vector-icons';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 
 const openLinkedin = () => {
@@ -29,7 +29,7 @@ export default function HomeScreen() {
           style={styles.reactLogo}
         />
       <View style={{backgroundColor: 'white', borderRadius: 40, width: 300, alignItems: 'center', top: 160, left: 4, height: 250}}>
-      <Image source={require('../../assets/images/picapau.jpeg')}
+      <Image source={require('../../assets/images/jj.jpeg')}
         style={styles.bolinha}
         />
         </View>
@@ -37,22 +37,29 @@ export default function HomeScreen() {
       
       <View style={{backgroundColor: 'white', alignItems: 'center', width: 300, left: 50, borderRadius: 40, top: 90, height: 400}}>
         
-        <Text style={{fontWeight: 'bold', top: 5}}>Juninho 17 anos</Text>
+        <Text style={{fontWeight: 'bold', top: 5}}>Julio 17 anos</Text>
         <Text style={{fontWeight: 'bold'}}>Etec</Text>
       <TouchableOpacity onPress={openLinkedin} style={styles.button}>
-        <Text style={styles.buttonText}>Linkedin</Text>
+        <View style={{display: 'flex', flexDirection:'row', gap: 15}}>
+          <View style={{width: 20, height: 20}}>
+            <Ionicons name="logo-linkedin" size={24} color="white"/>
+          </View>
+          <View style={{width: 80,}}>
+            <Text style={styles.buttonText}>Linkedin</Text>
+          </View>
+        </View>
       </TouchableOpacity>
       <TouchableOpacity onPress={openGithub} style={styles.button}>
-        <Text style={styles.buttonText}>GitHub</Text>
+        <Text style={styles.buttonText}><Ionicons name="logo-github" size={24} color="white" />GitHub</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={openTelefone} style={styles.button}>
-        <Text style={styles.buttonText}>Telefone</Text>
+        <Text style={styles.buttonText}><Ionicons name="call" size={24} color="white" />Telefone</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={openInstagram} style={styles.button}>
-        <Text style={styles.buttonText}>Instagram</Text>
+        <Text style={styles.buttonText}><Ionicons name="logo-instagram" size={24} color="white" />Instagram</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={openWhatsapp} style={styles.button}>
-        <Text style={styles.buttonText}>Whatsapp</Text>
+        <Text style={styles.buttonText}><Ionicons name="logo-whatsapp" size={24} color="white" />Whatsapp</Text>
       </TouchableOpacity>
     </View>
     
@@ -72,11 +79,12 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'blue',
-    width: 150,
+    width: 200,
     height: 50,
     borderRadius: 15,
     marginVertical: 5,
     justifyContent: 'center',
+    alignItems: 'center',
     top: 20
   },
   buttonText: {
